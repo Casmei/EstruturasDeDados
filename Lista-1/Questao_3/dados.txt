@@ -1,0 +1,12 @@
+Carlos Magno
+111.111.111-11
+1500.00
+Vendedor
+Antônio Mota
+222.222.222-22
+3000.00
+Gerente
+Marta Costa
+333.333.333-33
+2000.00
+Vendedor
