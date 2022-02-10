@@ -24,6 +24,12 @@ class Sacola():
 
   def contem(self, item):
     return item in self.itens
+  
+  def encontre(self, funcao_de_comparacao):
+    for i in self.itens:
+      if funcao_de_comparacao(i):
+        return i
+    return
 
   def __iter__(self):
     return iter(self.itens)
