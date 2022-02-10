@@ -23,7 +23,7 @@ class LeitorArquivoDeEmpregados:
     salario = self.arquivo.readline().rstrip()
     cargo = self.arquivo.readline().rstrip()
 
-    return Funcionario(nome, cpf, cargo, salario)
+    return Funcionario(nome, cpf, salario, cargo)
 
   def buscar_todos_funcionarios_em_uma_sacola(self):
     sacola_funcionarios = Sacola()

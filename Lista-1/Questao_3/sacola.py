@@ -11,8 +11,10 @@ class Sacola():
     id = self.itens.index(item)
     return self.itens.pop(id)
 
-  def buscar_item(self):
-    ...
+  def buscar_item(self, item):
+    for i in self.itens:
+      if i == item:
+        return item
 
   def quantidade_item(self, item):
     return sum(1 for i in self.itens if i == item)

@@ -37,12 +37,26 @@ while flag:
 
     if res == 2:
         print('--------------- LISTAGEM --------------- ')
-
+        
         for i in sacola_funcionarios:
           espaço_nome = ((len(i.nome) - 30) * -1 ) * '-'
           espaço_cpf = ((len(i.cpf) - 15) * -1 ) * '-'
-          espaço_salario = ((len(i.salario) - 20) * -1 ) * '-'
+          espaço_salario = ((len(str(i.salario)) - 20) * -1 ) * '-'
 
           print(f'{i.nome} {espaço_nome}---- {i.cpf} {espaço_cpf}---- {i.salario} {espaço_salario}---- {i.cargo}')
 
-    print('\n\n')
+    if res == 3:
+      
+      busca_cpf = input(" Informe o cpf do funcionário: ")
+      for i in sacola_funcionarios:
+        if i.cpf == busca_cpf:
+          print(f"\n - Nome: {i.nome}")
+          print(f" - Cargo: {i.cargo}")
+          print(f" - Salario: {i.salario}")
+
+    if res == 4:
+      leitor.fechar()
+      flag = False
+      print('\nPrograma Fechado!')
+
+    print('\n')
