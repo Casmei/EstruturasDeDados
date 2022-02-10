@@ -11,10 +11,11 @@ leitor.fechar()
 # =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 
 
-def cadastrar_funcionario(nome, cpf, cargo, salario):
-    funcionario = Funcionario(nome, cpf, cargo, salario)
+def cadastrar_funcionario(nome, cpf, salario, cargo):
+    funcionario = Funcionario(nome, cpf, salario, cargo)
     sacola_funcionarios.adicionar_item(funcionario)
-    return print(f"{funcionario.nome} Foi adicionado(a) com sucesso!")
+    with open(arquivo, 'a') as f:
+      f.write(str(funcionario))
 
 
 flag = True
@@ -32,9 +33,16 @@ while flag:
         cpf = input(" Informe o cpf do funcionário: ")
         cargo = input(" Informe o cargo do funcionário: ")
         salario = float(input(" Informe o salario do funcionário: "))
-        cadastrar_funcionario(nome, cpf, cargo, salario)
+        cadastrar_funcionario(nome, cpf, salario, cargo)
 
     if res == 2:
         print('--------------- LISTAGEM --------------- ')
+
         for i in sacola_funcionarios:
-            print(i)
+          espaço_nome = ((len(i.nome) - 30) * -1 ) * '-'
+          espaço_cpf = ((len(i.cpf) - 15) * -1 ) * '-'
+          espaço_salario = ((len(i.salario) - 20) * -1 ) * '-'
+
+          print(f'{i.nome} {espaço_nome}---- {i.cpf} {espaço_cpf}---- {i.salario} {espaço_salario}---- {i.cargo}')
+
+    print('\n\n')

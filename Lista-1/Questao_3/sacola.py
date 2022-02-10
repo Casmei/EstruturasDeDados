@@ -11,16 +11,11 @@ class Sacola():
     id = self.itens.index(item)
     return self.itens.pop(id)
 
-  def buscar_item(self, item):
-    id = self.itens.index(item)
-    return self.itens[id]
+  def buscar_item(self):
+    ...
 
   def quantidade_item(self, item):
-    quantidade = 0
-    for i in self.itens:
-      if item == i:
-        quantidade += 1
-    return quantidade
+    return sum(1 for i in self.itens if i == item)
 
   def tamanho_sacola(self):
     return len(self.itens)
@@ -29,18 +24,4 @@ class Sacola():
     return item in self.itens
 
   def __iter__(self):
-    return Iterador(self.itens)
-
-
-class Iterador:
-  def __init__(self, lista):
-    self.itens = lista
-    self.atual = 0
-
-  def __next__(self):
-    if self.atual < len(self.itens):
-      item = self.itens[self.atual]
-      self.atual += 1
-      return item
-    else:
-      raise StopIteration
+    return iter(self.itens)
