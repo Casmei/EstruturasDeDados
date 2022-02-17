@@ -20,7 +20,7 @@ class Box():
 
   def remover_item_da_caixa(self) -> None:
     self.item = None
-    return None
+    return self.item
 
   def ver_item_da_caixa(self):
     pass
