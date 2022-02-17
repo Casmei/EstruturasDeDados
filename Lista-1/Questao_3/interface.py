@@ -1,4 +1,3 @@
-from email.policy import default
 from leitor_funcionarios import LeitorArquivoDeEmpregados
 from funcionario import Funcionario
 
@@ -18,7 +17,7 @@ def mostrar_menu():
     return int(input(" Digite o número da operação: "))
 
 def executa_opcao_do_menu(res, sacola_funcionarios):
-   match res:
+  match res:
         case 1:
           cadastrar_novo_funcionarios(sacola_funcionarios)
           return True
