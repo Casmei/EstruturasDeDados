@@ -1,4 +1,3 @@
-
 class Box():
 
   def __init__(self):
@@ -23,20 +22,12 @@ class Box():
     return self.item
 
   def ver_item_da_caixa(self):
-    pass
+    if self.item != None:
+      return print(self.item)
+    else:
+      return False
 
-  def verifica_se_tem_conteudo_na_caixa(self):
-    pass
+  def verifica_se_tem_conteudo_na_caixa(self, item):
+    return print(item == self.item)
 
 caixa = Box()
-
-
-print(caixa)
-caixa.adicionar_item_na_caixa("Televisão")
-print(caixa)
-caixa.adicionar_item_na_caixa("Televisão2")
-print(caixa)
-caixa.remover_item_da_caixa()
-print(caixa)
-caixa.adicionar_item_na_caixa("Televisão2")
-print(caixa)
